@@ -1,0 +1,100 @@
+body,
+body * {
+box-sizing: border-box;
+margin:0;
+padding:0;
+}
+body{
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+background-color: black;
+color: gold;
+min-height: 100vh;
+display: flex;
+justify-content: space-evenly;
+align-items: center;
+flex-direction: column;
+}
+.clock-digital{
+text-align: center;
+}
+.date{
+    font-family: sans-serif;
+    font-size: 3rem;
+
+}
+.time{
+    font-size: 3rem;
+    font-family: monospace;
+
+}
+.clock-analog {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: bisque;
+    border: solid 4px green;
+}
+
+.hour-marks {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.mark {
+    position: absolute;
+    width: 3px;
+    height: 10px;
+    background: #333;
+    left: 50%;
+    top: 5px;
+    margin-left: -1.5px;
+    transform-origin: center 95px; /* 95px = (200px/2) - 5px */
+}
+
+/* Padaliname 12 žymių lygiai aplink laikrodį */
+.mark:nth-child(1) { transform: rotate(30deg); }
+.mark:nth-child(2) { transform: rotate(60deg); }
+.mark:nth-child(3) { transform: rotate(90deg); }
+.mark:nth-child(4) { transform: rotate(120deg); }
+.mark:nth-child(5) { transform: rotate(150deg); }
+.mark:nth-child(6) { transform: rotate(180deg); }
+.mark:nth-child(7) { transform: rotate(210deg); }
+.mark:nth-child(8) { transform: rotate(240deg); }
+.mark:nth-child(9) { transform: rotate(270deg); }
+.mark:nth-child(10) { transform: rotate(300deg); }
+.mark:nth-child(11) { transform: rotate(330deg); }
+.mark:nth-child(12) { transform: rotate(360deg); }
+
+
+.hours, .minutes, .seconds {
+    position: absolute;
+    transform-origin: bottom center;
+}
+
+.hours {
+    left: calc(50% - 5px);
+    top: 30px;  /* 200px(height) - 70px(rodytlės ilgis) - 100px(offset) */
+    background-color: black;
+    width: 10px;
+    height: 70px;
+}
+
+.minutes {
+    background-color: black;
+    width: 6px;
+    height: 80px;
+    left: calc(50% - 3px);
+    top: 20px;  /* 200px - 80px - 100px */
+}
+
+.seconds {
+    background-color: orangered;
+    left: calc(50% - 2px);
+    top: 10px;  /* 200px - 90px - 100px */
+    width: 4px;
+    height: 90px;
+}
