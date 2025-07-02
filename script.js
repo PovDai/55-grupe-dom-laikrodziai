@@ -71,8 +71,6 @@ function chill() {
     timeElDOM.classList.add('chill')
     isPomodoro ? setTimeout(work, 5 * 60000) : remove()
     pDOM.innerHTML = ''; // Išvalo seną pranešimą
- 
-    
 
 }
 
@@ -83,8 +81,6 @@ function work() {
     isPomodoro ? setTimeout(chill, 25 * 60000) : remove()
     pDOM.innerHTML = ''; // Išvalo seną pranešimą
 
-  
-    
 
 
 }
