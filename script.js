@@ -5,7 +5,7 @@ const minElDOM = document.getElementsByClassName('minutes')[0];
 const sElDOM = document.getElementsByClassName('seconds')[0];
 
 const sliderDOM = document.getElementsByClassName('slider')[0]
-const pDOM=document.querySelector('p')
+const pDOM = document.querySelector('p')
 
 
 const months = ['sausio', 'vasario', 'kovo', 'balandžio', 'gegužės', 'birželio', 
@@ -57,10 +57,18 @@ sliderDOM.addEventListener('click', () => {
     click++
     
     if (click % 2 === 1) {
-        pDOM.insertAdjacentHTML('beforeend', '<p>Šiuo metu vyksta 5 min pertrauka</p>')
+        pDOM.insertAdjacentHTML('beforeend', `<p style="color:green">Šiuo metu vyksta 5 min pertrauka</p>
+              <h1>5 min atgalinis skaičiavimas</h1>
+    <div id="timer">05:00</div>
+    <button id="start">Pradėti</button>
+    <button id="reset">Atstatyti</button>`)
     } else {
         pDOM.innerHTML = '';
-        pDOM.insertAdjacentHTML('beforeend','<p>Šiuo metu 25min vyks darbas</p>')
+        pDOM.insertAdjacentHTML('beforeend', `<p style="color:blue">Šiuo metu 25min vyks darbas</p>
+            <h1>25 min atgalinis skaičiavimas</h1>
+    <div id="timer">25:00</div>
+    <button id="start">Pradėti</button>
+    <button id="reset">Atstatyti</button>`)
         
     }
 
@@ -91,4 +99,6 @@ function remove() {
   
     
 }
+
+
 
