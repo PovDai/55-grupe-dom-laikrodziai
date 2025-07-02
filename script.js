@@ -48,12 +48,21 @@ function addZero(t) {
 clock();
 
 let isPomodoro = false;
-
+let click = 0;
 sliderDOM.addEventListener('click', () => {
     isPomodoro ? isPomodoro = false : isPomodoro = true;
     sliderDOM.classList.toggle('active')
    
-    isPomodoro ? work():remove()
+    isPomodoro ? work() : remove()
+    click++
+    
+    if (click % 2 === 1) {
+        pDOM.insertAdjacentHTML('beforeend', '<p>Šiuo metu vyksta 5 min pertrauka</p>')
+    } else {
+        pDOM.innerHTML = '';
+        pDOM.insertAdjacentHTML('beforeend','<p>Šiuo metu 25min vyks darbas</p>')
+        
+    }
 
 
 })
@@ -62,7 +71,8 @@ function chill() {
     timeElDOM.classList.add('chill')
     isPomodoro ? setTimeout(work, 5 * 60000) : remove()
     pDOM.innerHTML = ''; // Išvalo seną pranešimą
-    pDOM.insertAdjacentHTML('afterbegin','<p>Šiuo metu vyksta 5 min pertrauka</p>')
+ 
+    
 
 }
 
@@ -72,7 +82,9 @@ function work() {
     timeElDOM.classList.add('work')
     isPomodoro ? setTimeout(chill, 25 * 60000) : remove()
     pDOM.innerHTML = ''; // Išvalo seną pranešimą
-    pDOM.insertAdjacentHTML('afterbegin','<p>Šiuo metu 25min vyksta darbas</p>')
+
+  
+    
 
 
 }
