@@ -5,8 +5,7 @@ const minElDOM = document.getElementsByClassName('minutes')[0];
 const sElDOM = document.getElementsByClassName('seconds')[0];
 
 const sliderDOM = document.getElementsByClassName('slider')[0]
-const darbasDOM = document.querySelector('.darbas')
-const pertraukaDOM=document.querySelector('.history')
+const pDOM=document.querySelector('p')
 
 
 const months = ['sausio', 'vasario', 'kovo', 'balandžio', 'gegužės', 'birželio', 
@@ -61,22 +60,21 @@ sliderDOM.addEventListener('click', () => {
 function chill() {
     timeElDOM.classList.remove('work')
     timeElDOM.classList.add('chill')
-    isPomodoro ? setTimeout(work, 5*60000) : remove()
+    isPomodoro ? setTimeout(work, 5 * 60000) : remove()
+    pDOM.innerHTML = ''; // Išvalo seną pranešimą
+    pDOM.insertAdjacentHTML('afterbegin','<p>Šiuo metu vyksta 5 min pertrauka</p>')
 
-    
-    
-   
 }
 
 function work() {
     
     timeElDOM.classList.remove('chill')
     timeElDOM.classList.add('work')
-    isPomodoro ? setTimeout(chill,25*60000) : remove()
+    isPomodoro ? setTimeout(chill, 25 * 60000) : remove()
+    pDOM.innerHTML = ''; // Išvalo seną pranešimą
+    pDOM.insertAdjacentHTML('afterbegin','<p>Šiuo metu 25min vyksta darbas</p>')
 
-  
-  
-  
+
 }
 
 function remove() {
