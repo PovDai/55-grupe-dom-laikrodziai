@@ -57,18 +57,19 @@ sliderDOM.addEventListener('click', () => {
     click++
     
     if (click % 2 === 1) {
-        pDOM.insertAdjacentHTML('beforeend', `<p style="color:green">Šiuo metu vyksta 5 min pertrauka</p>
-              <h1>5 min atgalinis skaičiavimas</h1>
-    <div id="timer">05:00</div>
-    <button id="start">Pradėti</button>
-    <button id="reset">Atstatyti</button>`)
-    } else {
-        pDOM.innerHTML = '';
-        pDOM.insertAdjacentHTML('beforeend', `<p style="color:blue">Šiuo metu 25min vyks darbas</p>
-            <h1>25 min atgalinis skaičiavimas</h1>
+        pDOM.insertAdjacentHTML('beforeend', `<h3 style="color:green">Šiuo metu 25min vyks darbas</h3>
+              
     <div id="timer">25:00</div>
-    <button id="start">Pradėti</button>
-    <button id="reset">Atstatyti</button>`)
+    `)
+        
+    }
+    else {
+        pDOM.innerHTML = '';
+        pDOM.insertAdjacentHTML('beforeend', `<h3 style="color:blue">Šiuo metu vyksta 5min petrauka</h3>
+           
+    <div id="timer">05:00</div>
+   `)
+        
         
     }
 
@@ -99,6 +100,8 @@ function remove() {
   
     
 }
+
+
 
 
 
