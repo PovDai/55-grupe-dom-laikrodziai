@@ -147,3 +147,48 @@ body {
     width: 4px;
     height: 90px;
 }
+
+.pomodoro {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.slider {
+    background-color: green;
+    padding: 3px;
+    border-radius: 12px;
+    width: 51px;
+    transition: all 2s;
+}
+
+.dot {
+    background-color: gold;
+    width: 15px;
+    height: 15px;
+    border-radius: 8px;
+    transition: all 2s;
+}
+
+.label {
+    font-family: sans-serif;
+}
+
+.active{
+    background-color: tomato;
+    transition: all 2s;
+}
+
+.active .dot {
+    background-color: gold;
+    transform: translateX(30px);
+    transition: all 2s;
+}
+.work{
+    color: green;
+}
+.chill{
+    color: blue;
+
+}
+.none{display: none;}

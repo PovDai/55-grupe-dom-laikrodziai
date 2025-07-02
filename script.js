@@ -4,6 +4,11 @@ const hourElDOM = document.getElementsByClassName('hours')[0];
 const minElDOM = document.getElementsByClassName('minutes')[0];
 const sElDOM = document.getElementsByClassName('seconds')[0];
 
+const sliderDOM = document.getElementsByClassName('slider')[0]
+const darbasDOM = document.querySelector('.darbas')
+const pertraukaDOM=document.querySelector('.history')
+
+
 const months = ['sausio', 'vasario', 'kovo', 'balandžio', 'gegužės', 'birželio', 
     'liepos', 'rugpjūčio', 'rugsėjo', 'spalio', 'lapkričio', 'gruodžio'];
 
@@ -43,4 +48,41 @@ function addZero(t) {
 
 clock();
 
+let isPomodoro = false;
+
+sliderDOM.addEventListener('click', () => {
+    isPomodoro ? isPomodoro = false : isPomodoro = true;
+    sliderDOM.classList.toggle('active')
+   
+    isPomodoro ? work():remove()
+
+
+})
+function chill() {
+    timeElDOM.classList.remove('work')
+    timeElDOM.classList.add('chill')
+    isPomodoro ? setTimeout(work, 5*60000) : remove()
+
+    
+    
+   
+}
+
+function work() {
+    
+    timeElDOM.classList.remove('chill')
+    timeElDOM.classList.add('work')
+    isPomodoro ? setTimeout(chill,25*60000) : remove()
+
+  
+  
+  
+}
+
+function remove() {
+    timeElDOM.classList.remove('chill')
+    timeElDOM.classList.remove('work')
+  
+    
+}
 
