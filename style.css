@@ -125,17 +125,19 @@ body {
     left: calc(50% - 5px);
     top: 30px;
     /* 200px(height) - 70px(rodytlės ilgis) - 100px(offset) */
-    background-color: black;
+    background-color: gold;
     width: 10px;
     height: 70px;
+    border-radius: 10px;
 }
 
 .minutes {
-    background-color: black;
+    background-color:gold;
     width: 6px;
     height: 80px;
     left: calc(50% - 3px);
     top: 20px;
+    border-radius: 10px;
     /* 200px - 80px - 100px */
 }
 
@@ -146,6 +148,7 @@ body {
     /* 200px - 90px - 100px */
     width: 4px;
     height: 90px;
+    border-radius: 10px;
 }
 
 .pomodoro {
@@ -204,3 +207,4 @@ button {
     font-size: 16px;
     cursor: pointer;
 }
+

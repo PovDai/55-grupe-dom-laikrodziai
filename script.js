@@ -76,8 +76,8 @@ sliderDOM.addEventListener('click', () => {
 
 })
 function chill() {
-    timeElDOM.classList.remove('work')
-    timeElDOM.classList.add('chill')
+    timeElDOM.classList.remove('chill')
+    timeElDOM.classList.add('work')
     isPomodoro ? setTimeout(work, 5 * 60000) : remove()
     pDOM.innerHTML = ''; // Išvalo seną pranešimą
 
@@ -85,8 +85,8 @@ function chill() {
 
 function work() {
     
-    timeElDOM.classList.remove('chill')
-    timeElDOM.classList.add('work')
+    timeElDOM.classList.remove('work')
+    timeElDOM.classList.add('chill')
     isPomodoro ? setTimeout(chill, 25 * 60000) : remove()
     pDOM.innerHTML = ''; // Išvalo seną pranešimą
 
@@ -97,8 +97,7 @@ function work() {
 function remove() {
     timeElDOM.classList.remove('chill')
     timeElDOM.classList.remove('work')
-  
-    
+
 }
 
 
